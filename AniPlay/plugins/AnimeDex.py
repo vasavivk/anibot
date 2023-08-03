@@ -42,12 +42,12 @@ class AnimeDex:
         for i in eps:
             ep.append((i.text, 'https://animedex.live' + i.get('href')))
 
-        return img, text, ep, url
+        return img, text, ep
 
     def episode(url):
         soup = bs(requests.get(url).content, 'html.parser')
         text = soup.find('b').text
-
+        url = url
         sub = soup.find('div', 'server').find_all('div', 'sitem')
         surl = []
         for i in sub:
@@ -63,4 +63,4 @@ class AnimeDex:
                     i.find('a').get('data-value').split(' ')[0]
                 durl.append((i.text.strip(), url))
 
-        return text, surl, durl
+        return text, surl, durl, url
