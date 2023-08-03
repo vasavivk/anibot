@@ -223,7 +223,7 @@ class BTN:
             if len(x) != 0:
                 temp.append(x)
         temp.append([InlineKeyboardButton(
-            text='Download', url=url)
+            text='Download', url=url)])
         temp.append([InlineKeyboardButton(
             text='Back', callback_data=f'AnimeS {id} {back}')])
         return InlineKeyboardMarkup(temp)
