@@ -76,8 +76,8 @@ async def episode(_, query: CallbackQuery):
         return await query.message.delete()
 
     await query.answer('Loading ...')
-    text, surl, durl, url = AnimeDex.episode(url[0])
-    button = BTN.episode(id, surl, durl, url[1])
+    text, surl, durl, dlurl = AnimeDex.episode(url[0])
+    button = BTN.episode(id, surl, durl, dlurl, url[1])
 
     await query.message.edit(text, reply_markup=button)
 
