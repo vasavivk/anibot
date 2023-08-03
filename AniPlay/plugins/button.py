@@ -177,7 +177,7 @@ class BTN:
                 text='Back', callback_data=f'searchBACK {id} {back}')])
             return InlineKeyboardMarkup(temp)
 
-    def episode(id, surl, durl, url, back):
+    def episode(id, surl, durl, dlurl, back):
         temp = []
         pos = 1
         x = []
@@ -223,7 +223,7 @@ class BTN:
             if len(x) != 0:
                 temp.append(x)
         temp.append([InlineKeyboardButton(
-            text='Download', url=url)])
+            text='Download', url= dlurl)])
         temp.append([InlineKeyboardButton(
             text='Back', callback_data=f'AnimeS {id} {back}')])
         return InlineKeyboardMarkup(temp)
