@@ -42,7 +42,7 @@ class AnimeDex:
         for i in eps:
             ep.append((i.text, 'https://animedex.live' + i.get('href')))
 
-        return img, text, ep
+        return img, text, ep, url
 
     def episode(url):
         soup = bs(requests.get(url).content, 'html.parser')
